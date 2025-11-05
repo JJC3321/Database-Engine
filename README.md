@@ -18,7 +18,7 @@ Database/
 │   └── data.frm        # Database storage file
 ├── test/
 │   ├── testDatabase.cpp    # Database test cases
-    ├── testInformation.cpp  # Information test cases 
+│   └── testInformation.cpp  # Information test cases 
 └── README.md           # This file
 ```
 
