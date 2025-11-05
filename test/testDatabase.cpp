@@ -13,21 +13,21 @@ int main(){
 
     Database db;
 
-    cout << "Adding composers to the database..." << endl;
-    db.AddComposer("Ludwig van", "Beethoven", 56, "beethoven@classical.com");
-    db.AddComposer("Wolfgang Amadeus", "Mozart", 35, "mozart@classical.com");
-    db.AddComposer("Johann Sebastian", "Bach", 65, "bach@classical.com");
+    cout << "Adding elements to the database..." << endl;
+    db.addInformation("Bobby", "Wu", 56, "bobbyW56@gmail.com");
+    db.addInformation("Wiley", "Moore", 35, "wileyM35@gmail.com");
+    db.addInformation("John", "Bauer", 65, "JohnB65@gmail.com");
     cout << endl;
     
     db.displayAll();
     
-    cout << "Fetching composer 'Mozart':" << endl;
-    Composer& mozart = db.getComposer("Mozart");
+    cout << "Fetching 'Wiley':" << endl;
+    information& mozart = db.getinformation("Wiley");
     mozart.display();
     cout << endl;
     
-    cout << "Trying to fetch non-existent composer:" << endl;
-    db.getComposer("Chopin");
+    cout << "Trying to fetch non-existent element:" << endl;
+    db.getinformation("Smith");
     cout << endl;
     
     cout << "Writing database to file..." << endl;
