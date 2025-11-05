@@ -72,7 +72,6 @@ clang++ -o test/testDatabase test/testDatabase.cpp database.cpp infomation.cpp -
 cl /EHsc /Fetest\testDatabase.exe test\testDatabase.cpp database.cpp infomation.cpp
 ```
 
-```
 ## Future Enhancement
 
 - Working on implamenting a deletion method 
