@@ -1,5 +1,5 @@
-//------------- Composer Implementation -------------// 
-#include "composer.h"
+//------------- Infomation Implementation -------------// 
+#include "infomation.h"
 #include <iostream>
 
 using std::cout;

@@ -1,4 +1,4 @@
-//-------------Composer for Database -------------// 
+//-------------Infomation for Database -------------// 
 #include <string>
 
 using std :: string;

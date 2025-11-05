@@ -1,7 +1,7 @@
-//------------- Test case for composer.h-------------// 
+//------------- Test case for infomation.h-------------// 
 
 #include <iostream>
-#include "composer.h"
+#include "infomation.h"
 
 using std :: cout;
 using std :: endl; 
