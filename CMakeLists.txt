@@ -9,7 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Create a library for the database engine
 add_library(database_lib 
     database.cpp
-    infomation.cpp
+    information.cpp
 )
 
 # Make headers available to the library and anything that links to it
@@ -21,19 +21,19 @@ target_include_directories(database_lib PUBLIC
 add_executable(testDatabase test/testDatabase.cpp)
 target_link_libraries(testDatabase PRIVATE database_lib)
 
-add_executable(testInfomation test/testInfomation.cpp)
-target_link_libraries(testInfomation PRIVATE database_lib)
+add_executable(testInformation test/testInformation.cpp)
+target_link_libraries(testInformation PRIVATE database_lib)
 
 # Enable testing with CTest
 enable_testing()
 add_test(NAME DatabaseTest COMMAND testDatabase)
-add_test(NAME InfomationTest COMMAND testInfomation)
+add_test(NAME InformationTest COMMAND testInformation)
 
 # Set the working directory for tests so they can access the data folder
 set_tests_properties(DatabaseTest PROPERTIES 
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
-set_tests_properties(InfomationTest PROPERTIES 
+set_tests_properties(InformationTest PROPERTIES 
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
