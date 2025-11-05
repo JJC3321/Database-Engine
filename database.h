@@ -2,11 +2,11 @@
 
 #include <iostream>
 #include "composer.h"
+#include <fstream>
 
 using std :: string;
 
 const int kMaxComposers = 100; 
-
 
 class Database{
     
@@ -22,8 +22,9 @@ class Database{
         Composer& AddComposer(string firstName, string lastName, int age,  string email);
         Composer& getComposer(string lastName);
         void displayAll(); 
-    
-    
+        void write(); 
+
+        
     private:
         Composer composer_[kMaxComposers];
         int nextSlot; 

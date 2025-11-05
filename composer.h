@@ -3,8 +3,6 @@
 
 using std :: string;
 
-const int kDefaultRanking = 10; 
-
 class Composer{
     public:
 
@@ -23,13 +21,11 @@ class Composer{
         int age();
         void setEmail(string email);
         string email();
-        void setRank(int rank);
-        int rank(); 
+        void setId(int id);
+        int id(); 
 
         // Methods
 
-        void promote(int increment);
-        void demote(int decrement);
         void display();
 
 
@@ -38,5 +34,5 @@ class Composer{
         string Lastname_;
         int age_;
         string email_; 
-        int ranking_; 
+        int id_; 
 };

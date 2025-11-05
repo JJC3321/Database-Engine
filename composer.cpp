@@ -11,7 +11,7 @@ Composer::Composer() {
     Lastname_ = "";
     age_ = 0;
     email_ = "";
-    ranking_ = kDefaultRanking;
+    id_ = 0;
 }
 
 // Destructor
@@ -36,8 +36,8 @@ void Composer::setEmail(string email) {
     email_ = email;
 }
 
-void Composer::setRank(int rank) {
-    ranking_ = rank;
+void Composer::setId(int id) {
+    id_ = id;
 }
 
 // Accessors
@@ -57,23 +57,16 @@ string Composer::email() {
     return email_;
 }
 
-int Composer::rank() {
-    return ranking_;
+int Composer::id() {
+    return id_;
 }
 
 // Methods
-void Composer::promote(int increment) {
-    ranking_ += increment;
-}
-
-void Composer::demote(int decrement) {
-    ranking_ -= decrement;
-}
 
 void Composer::display() {
     cout << "Composer Information:" << endl;
+    cout << "ID: " << id_ << endl;
     cout << "Name: " << firstName_ << " " << Lastname_ << endl;
     cout << "Age: " << age_ << endl;
     cout << "Email: " << email_ << endl;
-    cout << "Ranking: " << ranking_ << endl;
 }
