@@ -1,4 +1,4 @@
-# Composer Database Engine
+# Database Engine
 
 A lightweight, file-based database engine written in C++. This project implements a simple in-memory database with persistent storage capabilities.
 
