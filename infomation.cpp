@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 
 // Constructor
-Composer::Composer() {
+information::information() {
     firstName_ = "";
     Lastname_ = "";
     age_ = 0;
@@ -15,56 +15,56 @@ Composer::Composer() {
 }
 
 // Destructor
-Composer::~Composer() {
+information::~information() {
     // Cleanup if needed
 }
 
 // Mutators
-void Composer::setFirstName(string firstName) {
+void information::setFirstName(string firstName) {
     firstName_ = firstName;
 }
 
-void Composer::setLastName(string lastName) {
+void information::setLastName(string lastName) {
     Lastname_ = lastName;
 }
 
-void Composer::setAge(int age) {
+void information::setAge(int age) {
     age_ = age;
 }
 
-void Composer::setEmail(string email) {
+void information::setEmail(string email) {
     email_ = email;
 }
 
-void Composer::setId(int id) {
+void information::setId(int id) {
     id_ = id;
 }
 
 // Accessors
-string Composer::firstName() {
+string information::firstName() {
     return firstName_;
 }
 
-string Composer::LastName() {
+string information::LastName() {
     return Lastname_;
 }
 
-int Composer::age() {
+int information::age() {
     return age_;
 }
 
-string Composer::email() {
+string information::email() {
     return email_;
 }
 
-int Composer::id() {
+int information::id() {
     return id_;
 }
 
 // Methods
 
-void Composer::display() {
-    cout << "Composer Information:" << endl;
+void information::display() {
+    cout << "information Information:" << endl;
     cout << "ID: " << id_ << endl;
     cout << "Name: " << firstName_ << " " << Lastname_ << endl;
     cout << "Age: " << age_ << endl;

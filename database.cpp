@@ -27,11 +27,11 @@ void Database :: write(){
 
     // Write infomation to database 
     for(int i = 0; i < nextSlot; i++){
-        outPutFile << composer_[i].id() << std :: endl;
-        outPutFile << composer_[i].firstName() << std :: endl;
-        outPutFile << composer_[i].LastName() << std :: endl;
-        outPutFile << composer_[i].age() << std :: endl;
-        outPutFile << composer_[i].email() << std :: endl;
+        outPutFile << information_[i].id() << std :: endl;
+        outPutFile << information_[i].firstName() << std :: endl;
+        outPutFile << information_[i].LastName() << std :: endl;
+        outPutFile << information_[i].age() << std :: endl;
+        outPutFile << information_[i].email() << std :: endl;
     }
 
     outPutFile.close(); 
@@ -39,35 +39,32 @@ void Database :: write(){
 
 
 
-Composer& Database :: AddComposer(string firstName, string lastName, int age, string email){
-
-    if(nextSlot >= kMaxComposers){
-        std :: cout << "Database is full!" << std :: endl;
-        return composer_[kMaxComposers - 1]; // Return last slot if full
-    }
+information& Database :: addInformation(string firstName, string lastName, int age, string email){
     
-    composer_[nextSlot].setId(nextSlot + 1);  // Auto-assign ID starting from 1
-    composer_[nextSlot].setFirstName(firstName);
-    composer_[nextSlot].setLastName(lastName);
-    composer_[nextSlot].setAge(age);
-    composer_[nextSlot].setEmail(email);
+    information newinformation;
+    newinformation.setId(nextSlot + 1);  // Auto-assign ID starting from 1
+    newinformation.setFirstName(firstName);
+    newinformation.setLastName(lastName);
+    newinformation.setAge(age);
+    newinformation.setEmail(email);
     
+    information_.push_back(newinformation);
     nextSlot++;
-    return composer_[nextSlot - 1];
+    return information_[nextSlot - 1];
 }
 
 
-Composer& Database :: getComposer(string lastName){
+information& Database :: getinformation(string lastName){
     for(int i = 0; i < nextSlot; i++){
-        if(composer_[i].LastName() == lastName){
-            return composer_[i];
+        if(information_[i].LastName() == lastName){
+            return information_[i];
         }
     }
     
-    // Composer not found - return a static empty composer
-    std :: cout << "Composer with last name '" << lastName << "' not found!" << std :: endl;
-    static Composer emptyComposer;
-    return emptyComposer;
+    // information not found - return a static empty information
+    std :: cout << "last name '" << lastName << "' not found!" << std :: endl;
+    static information emptyinformation;
+    return emptyinformation;
 }
 
 void Database :: displayAll(){
@@ -77,11 +74,11 @@ void Database :: displayAll(){
     }
     
     std :: cout << "=== Database Contents ===" << std :: endl;
-    std :: cout << "Total Composers: " << nextSlot << std :: endl << std :: endl;
+    std :: cout << "Total elements: " << nextSlot << std :: endl << std :: endl;
     
     for(int i = 0; i < nextSlot; i++){
-        std :: cout << "Composer #" << (i + 1) << ":" << std :: endl;
-        composer_[i].display();
+        std :: cout << "Name #" << (i + 1) << ":" << std :: endl;
+        information_[i].display();
         std :: cout << std :: endl;
     }
 }

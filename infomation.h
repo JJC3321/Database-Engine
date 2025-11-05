@@ -3,13 +3,13 @@
 
 using std :: string;
 
-class Composer{
+class information{
     public:
 
         // Constructor & Deconstructor 
 
-        Composer(); 
-        ~Composer(); 
+        information(); 
+        ~information(); 
         
         // Accessors and  Mutators 
     

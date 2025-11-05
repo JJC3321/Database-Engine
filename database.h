@@ -3,10 +3,9 @@
 #include <iostream>
 #include "infomation.h"
 #include <fstream>
+#include <vector>
 
 using std :: string;
-
-const int kMaxComposers = 100; 
 
 class Database{
     
@@ -19,13 +18,13 @@ class Database{
         
         //Method
         
-        Composer& AddComposer(string firstName, string lastName, int age,  string email);
-        Composer& getComposer(string lastName);
+        information& addInformation(string firstName, string lastName, int age,  string email);
+        information& getinformation(string lastName);
         void displayAll(); 
         void write(); 
 
         
     private:
-        Composer composer_[kMaxComposers];
+        std::vector<information> information_;
         int nextSlot; 
 };
