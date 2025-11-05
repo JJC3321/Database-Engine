@@ -1,7 +1,7 @@
 //------------- Test case for infomation.h-------------// 
 
 #include <iostream>
-#include "infomation.h"
+#include "information.h"
 
 using std :: cout;
 using std :: endl; 
@@ -9,14 +9,14 @@ using std :: endl;
 int main(){
     
     cout << endl;
-    cout << "Testing the Composer class." << endl << endl; 
+    cout << "Testing the information class." << endl << endl; 
 
-    Composer composer;
+    information information;
 
-    composer.setFirstName("Jian Jin");
-    composer.setLastName("Chen");
-    composer.setAge(22);
-    composer.setEmail("jianjinchen59@gmail.com");
-    composer.display();
+    information.setFirstName("Jian Jin");
+    information.setLastName("Chen");
+    information.setAge(22);
+    information.setEmail("jianjinchen59@gmail.com");
+    information.display();
     
 }
