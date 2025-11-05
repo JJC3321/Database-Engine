@@ -54,12 +54,44 @@ Manages a collection of composer records with the following operations:
 - `displayAll()`: Display all composers in the database
 - `write()`: Persist database to file
 
-### Prerequisites
+## Prerequisites
 
 - C++ compiler with C++11 support (g++, clang++, MSVC)
 - Standard C++ library
+- CMake 3.10 or higher (optional, but recommended)
 
-### Compile Database Test
+## Building the Project
+
+### Option 1: Using CMake (Recommended)
+
+CMake provides a cross-platform build system that works on Windows, Linux, and macOS.
+
+```bash
+# Configure the build (first time or when CMakeLists.txt changes)
+cmake -B build
+
+# Build the project
+cmake --build build
+
+# Run tests
+cd build && ctest --verbose
+```
+
+Or on Windows with PowerShell:
+```powershell
+# Configure and build
+cmake -B build
+cmake --build build
+
+# Run tests
+cd build; ctest --verbose
+```
+
+The executables will be in the `build` directory (or `build/Debug` on Windows with MSVC).
+
+### Option 2: Manual Compilation
+
+If you prefer not to use CMake, you can compile manually:
 
 ```bash
 # Using g++
