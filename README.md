@@ -4,35 +4,36 @@ A lightweight, file-based database engine written in C++. This project implement
 
 ## Overview
 
-This database engine provides a straightforward way to store, retrieve, and manage information. It features an in-memory data structure with file persistence, making it suitable for small to medium-sized datasets.
+This database engine provides a straightforward way to store, retrieve, and manage information records. It features an in-memory data structure with file persistence, making it suitable for small to medium-sized datasets.
 
 ## Project Structure
 
 ```
 Database/
-├── infomation.h         # Composer class declaration
-├── infomation.cpp       # Composer class implementation
+├── information.h        # Information class declaration
+├── information.cpp      # Information class implementation
 ├── database.h           # Database class declaration
 ├── database.cpp         # Database class implementation
 ├── data/
 │   └── data.frm        # Database storage file
 ├── test/
-│   ├── testDatabase.cpp    # Database test cases
+│   ├── testDatabase.cpp     # Database test cases
 │   └── testInformation.cpp  # Information test cases 
+├── CMakeLists.txt      # CMake build configuration
 └── README.md           # This file
 ```
 
 ## Classes
 
-### Composer Class
+### Information Class
 
-Represents an individual composer with the following attributes:
+Represents an individual record with the following attributes:
 
 - **ID**: Unique identifier (auto-assigned)
-- **First Name**: Composer's first name
-- **Last Name**: Composer's last name
-- **Age**: Composer's age
-- **Email**: Composer's email address
+- **First Name**: Person's first name
+- **Last Name**: Person's last name
+- **Age**: Person's age
+- **Email**: Person's email address
 
 #### Methods
 
@@ -41,18 +42,19 @@ Represents an individual composer with the following attributes:
 - `setAge(int)` / `age()`: Set/get age
 - `setEmail(string)` / `email()`: Set/get email
 - `setId(int)` / `id()`: Set/get ID
-- `display()`: Display composer information
+- `display()`: Display information record
 
 ### Database Class
 
-Manages a collection of composer records with the following operations:
+Manages a collection of information records with the following operations:
 
 #### Methods
 
-- `AddComposer(firstName, lastName, age, email)`: Add a new composer to the database
-- `getComposer(lastName)`: Retrieve a composer by last name
-- `displayAll()`: Display all composers in the database
+- `addInformation(firstName, lastName, age, email)`: Add a new record to the database
+- `getinformation(lastName)`: Retrieve a record by last name
+- `displayAll()`: Display all records in the database
 - `write()`: Persist database to file
+- `read()`: Load database from file
 
 ## Prerequisites
 
@@ -95,10 +97,10 @@ If you prefer not to use CMake, you can compile manually:
 
 ```bash
 # Using g++
-g++ -o test/testDatabase test/testDatabase.cpp database.cpp infomation.cpp -std=c++11
+g++ -o test/testDatabase test/testDatabase.cpp database.cpp information.cpp -std=c++11
 
 # Using clang++
-clang++ -o test/testDatabase test/testDatabase.cpp database.cpp infomation.cpp -std=c++11
+clang++ -o test/testDatabase test/testDatabase.cpp database.cpp information.cpp -std=c++11
 
 # On Windows with MSVC
 cl /EHsc /Fetest\testDatabase.exe test\testDatabase.cpp database.cpp infomation.cpp
