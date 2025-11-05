@@ -22,8 +22,8 @@ int main(){
     db.displayAll();
     
     cout << "Fetching 'Wiley':" << endl;
-    information& mozart = db.getinformation("Wiley");
-    mozart.display();
+    information& wiley = db.getinformation("Moore");
+    wiley.display();
     cout << endl;
     
     cout << "Trying to fetch non-existent element:" << endl;
